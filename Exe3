@@ -1,0 +1,38 @@
+package prjMatriz;
+
+import java.util.Random;
+
+public class soma {
+
+    public static void main(String[] args) {
+
+        int matriz[][] = new int[3][4];
+        int x = 0, y = 0, soma = 0;
+
+        Random random = new Random();
+        for (x = 0; x < 3; x++) {
+            for (y = 0; y < 3; y++) {
+                matriz[x][y] = random.nextInt(101);
+            }
+        }
+        for (x = 0; x < 3; x++) {
+
+            soma = 0;
+
+            for (y = 0; y < 3; y++) {
+                soma = soma + matriz[x][y];
+            }
+            matriz[x][3] = soma;
+        }
+        for (x = 0; x < 3; x++) {
+
+            System.out.print("\n { ");
+
+            for (y = 0; y < 4; y++) {
+                System.out.print(matriz[x][y] + " ");
+            }
+
+            System.out.println("}");
+        }
+    }
+}
